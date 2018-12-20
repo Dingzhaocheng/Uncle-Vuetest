@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = 'utf-8'/>
+	</head>
+	<body>
+	    <div id = 'app'>
+		    
+		</div>
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	   <script>
+			let Login = {
+				template:`<div>我是登陆页面</div>`,
+				}
+			Vue.use(VueRouter);
+			//使用路由组件
+			let router = new VueRouter({ //实例化路由对象,载入相关配置对象
+			routes:[
+			{
+				path:'/login',
+				component:Login
+			}
+			]
+			});
+			//指定路由改变局部的位置
+			let App = {
+				template:`<div>
+					<router-view></router-view>
+				</div>`
+			}
+			//将配置好的路由对象载入到vue实例之中
+			
+		    new Vue({
+			    el:'#app',
+				router:router,//绑定路由对象,否则会报matched错误 匹配到一个未定义的对象
+				components:{
+					'app':App
+				},
+				template:`<app/>`
+				
+			});
+	   </script>
+	</body>
+</html>

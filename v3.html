@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<meta charset ='utf-8'>
+	</head>
+	<body>
+		<div id="app">
+			<son :ook="msg2"></son>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('son',{
+				template:`<div>
+					<p>{{ook}}</p>
+				</div>`,
+				props:["ook"]
+			});
+			new Vue({
+			    el:'#app', 
+				data:{
+					msg2:"hello"
+				}
+				
+			});
+		
+		</script>
+	</body>
+</html>

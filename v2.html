@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<meta charset ='utf-8'>
+	</head>
+	<body>
+		<div id="app">
+			<son></son>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var Son = Vue.extend({
+				template:`<a :href="URLA">{{uName}}</a>`,
+				data:function(){
+					return{
+						URLA:"http://www.baidu.com",
+						uName:"百度"
+					}
+				}
+			});
+			new Vue({
+			    el:'#app',
+				components:{
+					'son':Son
+				}
+				
+			});
+		
+		</script>
+	</body>
+</html>

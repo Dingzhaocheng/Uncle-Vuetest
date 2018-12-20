@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = 'utf-8'/>
+	</head>
+	<body>
+	    <div id = 'app'>
+		    
+		</div>
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	   <script>
+			let Wng = {
+				template:`<div>
+					<h1>nihao</h1>
+				</div>`
+			}
+			Vue.component('wng',Wng);
+			let App = {
+				template:`<div>
+						<wng ref = "enen"/>
+						<button ref="btn">点击我</button>
+				</div>`,
+				
+				beforeCreate(){
+					//console.log(this.$refs.btn);
+				},
+				created(){
+				    //console.log(this.$refs.btn);
+				},
+				beforeMount(){
+				    //console.log(this.$refs.btn);
+				},
+				mounted(){
+				    //console.log(this.$refs.btn);
+					console.log(this.$refs.enen);
+				}
+			}
+		    new Vue({
+			    el:'#app',
+				components:{
+					'app':App
+				},
+				template:`<app/>`
+				
+			});
+	   </script>
+	</body>
+</html>
